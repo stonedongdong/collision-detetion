@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>LINE/POINT</title>
+		<script src="./script/init.js" charset="utf-8" type="text/javascript"></script>
+        <script src="./script/hit.js" charset="utf-8" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="./css/style.css"   />
+		<script>
+			const init = readyInit({
+				baseShape: "line",
+                drawOpt: [{x: 100, y:400},{x: 800, y:100}],
+				hitFunc: (e, drawOpt) => {
+					return hit.linePoint(drawOpt,e)
+				}
+			})
+		</script>
+	</head>
+	<body onload="init()">
+		<div id="container">
+            <canvas id="test" width=100% height=100%></canvas>
+        </div>
+	</body>
+</html>
