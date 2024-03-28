@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>POINT/POINT</title>
+		<script src="./script/init.js" charset="utf-8" type="text/javascript"></script>
+        <script src="./script/hit.js" charset="utf-8" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="./css/style.css"   />
+		<script>
+			const init = readyInit({
+				zoom: 10,radius:1,radius1:1,
+				fillRectColliding: true,
+				hitFunc: (e, cp,{zoom}) => {
+					return hit.pointPoint(cp, utils.toPoint(Math.round(e.x/zoom), Math.round(e.y/zoom)))
+				}
+			})
+		</script>
+	</head>
+	<body onload="init()">
+		<div id="container">
+            <canvas id="test" width=100% height=100%></canvas>
+        </div>
+	</body>
+</html>
